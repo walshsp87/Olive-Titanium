@@ -1,0 +1,15 @@
+.EditableRow-editable {
+  max-width: 75px;
+}
+
+.EditableRow-cell {
+  vertical-align: middle !important;
+}
+
+.EditableRow-btnCol {
+  max-width: 25px;
+}
+
+.EditableRow-btnCol {
+  font-style: italic;
+}

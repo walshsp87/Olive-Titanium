@@ -1,0 +1,12 @@
+.PrimaryRender-title {
+  text-align: center;
+}
+
+.PrimaryRender-stat {
+  line-height: 54px;
+}
+@media all and (max-width: 767px) {
+  .PrimaryRender-stat {
+    text-align: center;
+  }
+}
