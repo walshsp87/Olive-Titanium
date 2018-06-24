@@ -4,8 +4,6 @@ import { Row, Col } from 'react-bootstrap'
 import { EditableTable } from '../editableTable/'
 import { PeriodSelector } from './PeriodSelector'
 
-import { zeroPad } from '../../utilities/zeroPad'
-
 export class TransactionsLayout extends React.Component {
   constructor(props) {
     super(props)
@@ -43,7 +41,7 @@ export class TransactionsLayout extends React.Component {
       columns,
       currMonth: month,
       currYear: year,
-      dateFilter: `${year}-${zeroPad(month, 2)}-??`
+      dateFilter: `${year}-${String(month).padStart(2, '0')}-??`
     }
   }
   render() {

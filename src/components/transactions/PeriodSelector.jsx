@@ -2,8 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types';
 import { FormGroup, FormControl } from 'react-bootstrap'
 
-import { zeroPad } from '../../utilities/zeroPad'
-
 export const PeriodSelector = ({month, year, filterName, monthChange}) => {
   const date = new Date()
   const currMonth = date.getMonth() + 1
@@ -42,7 +40,7 @@ function getLastYearInMonths(currentMonth, currentYear, accumulator = []) {
     [
       ...accumulator,
       {
-        value: `${currentYear}-${zeroPad(currentMonth, 2)}-??`,
+        value: `${currentYear}-${String(currentMonth).padStart(2, '0')}-??`,
         name: `${getMonthOneBase(currentMonth)} - ${currentYear}`
       }
     ]

@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types';
 
 import * as api from '../../utilities/api'
-import { zeroPad } from '../../utilities/zeroPad'
 import { EditableTableRender } from './EditableTableRender'
 
 export class EditableTable extends React.Component {
@@ -167,7 +166,7 @@ export class EditableTable extends React.Component {
         const day = date.getDate()
         const month = String(date.getMonth() + 1)
         const year = date.getFullYear()
-        value = `${year}-${zeroPad(month, 2)}-${day}`
+        value = `${year}-${String(month).padStart(2, '0')}-${day}`
       } else if (inputType === 'select') {
         value = -1
       }

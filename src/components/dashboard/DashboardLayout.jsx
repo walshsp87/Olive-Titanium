@@ -2,7 +2,6 @@ import React from 'react'
 import { Row } from 'react-bootstrap'
 
 import { GET } from '../../utilities/api'
-import { zeroPad } from '../../utilities/zeroPad'
 import { PrimaryRender } from './PrimaryRender'
 import { CategoryChartGroup } from './CategoryChartGroup'
 
@@ -46,7 +45,7 @@ export class DashboardLayout extends React.Component {
 
     const props = [
       'categories',
-      `transactions?date_like=${year}-${zeroPad(month, 2)}-??`,
+      `transactions?date_like=${year}-${String(month).padStart(2, '0')}-??`,
     ]
     this.setState({
       loading: true
