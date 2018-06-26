@@ -7,51 +7,55 @@ import { BrowserRouter, Switch } from 'react-router-dom'
 import { Grid } from 'react-bootstrap'
 import { Navigation } from './components/navigation'
 
-describe('App', () => {
-  let mountedApp
-  let shallowApp
+describe('<App />', () => {
+  let mountedComponent
+  let shallowComponent
 
-  const app = () => {
-    if (!mountedApp) {
-      mountedApp = mount(<App />)
+  const component = () => {
+    if (!mountedComponent) {
+      mountedComponent = mount(<App />)
     }
-    return mountedApp
+    return mountedComponent
   }
 
-  const appLite = () => {
-    if (!shallowApp) {
-      shallowApp = shallow(<App />)
+  const componentLite = () => {
+    if (!shallowComponent) {
+      shallowComponent = shallow(<App />)
     }
-    return shallowApp
+    return shallowComponent
   }
 
   beforeEach(() => {
-    mountedApp = undefined
-    shallowApp = undefined
+    mountedComponent = undefined
+    shallowComponent = undefined
   })
 
   it('renders without crashing', () => {
-    shallow(<App />)
+    expect(component())
+  })
+  
+  it('renders lite without crashing', () => {
+    expect(componentLite())
   })
 
   it('always locally renders two <div> elements', () => {
-    expect(appLite().find('div').length).toBe(2)
+    expect(componentLite().find('div').length).toBe(2)
   })
 
   it('always renders <BrowserRouter>', () => {
-    expect(app().find(BrowserRouter).length).toBe(1)
+    expect(component().find(BrowserRouter).length).toBe(1)
   })
 
   it('always renders <Navigation />', () => {
-    expect(app().find(Navigation).length).toBe(1)
+    expect(component().find(Navigation).length).toBe(1)
   })
 
   it('always renders <Switch>', () => {
-    expect(app().find(Switch).length).toBe(1)
+    expect(component().find(Switch).length).toBe(1)
   })
 
   it('always renders <Grid>', () => {
-    expect(appLite().find(Grid).length).toBe(1)
+    expect(componentLite().find(Grid).length).toBe(1)
   })
   
 })
