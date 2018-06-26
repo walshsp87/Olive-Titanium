@@ -6,7 +6,6 @@ import './CategoryChartGroup.css'
 import { PercentCircle } from '../../graph/PercentCircle'
 
 export const CategoryChartGroup = ({chartData}) => (
-  
   <Col xs={ 12 } sm={ 4 } className="CategoryChartGroup">
     <OverlayTrigger
       placement="bottom"
