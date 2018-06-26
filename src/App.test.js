@@ -34,23 +34,23 @@ describe('App', () => {
     shallow(<App />)
   })
 
-  it('always renders two divs', () => {
+  it('always locally renders two <div> elements', () => {
     expect(appLite().find('div').length).toBe(2)
   })
 
-  it('always renders BrowserRouter', () => {
+  it('always renders <BrowserRouter>', () => {
     expect(app().find(BrowserRouter).length).toBe(1)
   })
 
-  it('always renders Navigation', () => {
+  it('always renders <Navigation />', () => {
     expect(app().find(Navigation).length).toBe(1)
   })
 
-  it('always renders Switch', () => {
+  it('always renders <Switch>', () => {
     expect(app().find(Switch).length).toBe(1)
   })
 
-  it('always has Grid', () => {
+  it('always renders <Grid>', () => {
     expect(appLite().find(Grid).length).toBe(1)
   })
   
