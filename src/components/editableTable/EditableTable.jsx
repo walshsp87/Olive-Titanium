@@ -7,6 +7,7 @@ import { EditableTableRender } from './EditableTableRender'
 export class EditableTable extends React.Component {
   constructor(props) {
     super(props)
+
     this.state = {
       data: {
         table: []
@@ -43,7 +44,7 @@ export class EditableTable extends React.Component {
   saveEditable(path) {
     return (id, key, value) => {
       this.setState({ loading: true })
-      if (typeof id === 'number') {
+      if (!isNaN(id)) {
         const obj = {
           ...this.state.data.table.filter(datum => datum.id === id)[0],
           [key]: value,

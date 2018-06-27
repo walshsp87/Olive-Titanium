@@ -8,6 +8,14 @@ export class TransactionsLayout extends React.Component {
   constructor(props) {
     super(props)
 
+    const year = new Date().getFullYear()
+    const month = new Date().getMonth() + 1
+
+    this.state = {
+      dateFilter: `${year}-${String(month).padStart(2, '0')}-??`
+    }
+  }
+  render() {
     const columns = [
       {
         title: 'Date',
@@ -35,28 +43,17 @@ export class TransactionsLayout extends React.Component {
         selectPath: 'categories' 
       }
     ]
-    const year = new Date().getFullYear()
-    const month = new Date().getMonth() + 1
-    this.state = {
-      columns,
-      currMonth: month,
-      currYear: year,
-      dateFilter: `${year}-${String(month).padStart(2, '0')}-??`
-    }
-  }
-  render() {
+
     return (
       <Row>
         <Col xs={ 12 }>
           <PeriodSelector 
             filterName={ this.state.dateFilter }
-            month={ this.state.currMonth }
-            monthChange={ this.monthChange.bind(this) }
-            year={ this.state.currYear }/>
+            monthChange={ this.monthChange.bind(this) } />
           <EditableTable
             apiPath={ 'transactions' }
             apiDateFilter={ this.state.dateFilter }
-            columns={ this.state.columns }
+            columns={ columns }
           />
         </Col>
       </Row>

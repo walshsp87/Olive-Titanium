@@ -12,7 +12,7 @@
     },
     {
       "name": "Clothing",
-      "maxValue": "50",
+      "maxValue": "25",
       "id": 3
     },
     {
@@ -59,7 +59,7 @@
   "transactions": [
     {
       "date": "2018-06-03",
-      "name": "Wife Car",
+      "name": "Wife Car Payment",
       "value": "474",
       "catId": "1",
       "id": 1

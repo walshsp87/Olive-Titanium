@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom'
 import { Grid } from 'react-bootstrap'
 
-import { Navigation } from './components/navigation'
+import { Navigation } from './components/navigation/Navigation'
 import { DashboardLayout } from './components/dashboard/DashboardLayout'
 import { TransactionsLayout } from './components/transactions/TransactionsLayout'
 import { CategoriesLayout } from './components/categories/CategoriesLayout'

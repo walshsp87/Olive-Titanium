@@ -1,6 +1,8 @@
 import React from 'react'
 import { Row, Col } from 'react-bootstrap'
 
+import APICONST from '../../static/apiConst'
+
 import { EditableTable } from '../editableTable/'
 
 export const CategoriesLayout = () => {
@@ -22,7 +24,7 @@ export const CategoriesLayout = () => {
     <Row>
       <Col xs={ 12 }>
         <EditableTable
-          apiPath={ 'categories' }
+          apiPath={ APICONST.CATEGORIES }
           columns={ columns }
         />
       </Col>

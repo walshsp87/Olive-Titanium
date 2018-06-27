@@ -1,29 +1,6 @@
 import React from 'react'
-import PropTypes from 'prop-types';
-import { FormGroup, FormControl } from 'react-bootstrap'
 
-export const PeriodSelector = ({month, year, filterName, monthChange}) => {
-  const date = new Date()
-  const currMonth = date.getMonth() + 1
-  const currYear = date.getFullYear()
-
-  return (
-    <FormGroup controlId="periodSelect">
-      <FormControl componentClass="select" value={ filterName } onChange={ monthChange }>
-        { generateMonthOptions(currMonth, currYear) }
-      </FormControl>
-    </FormGroup>
-  )
-}
-
-PeriodSelector.propTypes = {
-  month: PropTypes.oneOfType([ PropTypes.string, PropTypes.number]),
-  year: PropTypes.oneOfType([ PropTypes.string, PropTypes.number]),
-  filterName: PropTypes.string,
-  monthChange: PropTypes.func
-}
-
-function generateMonthOptions(month, year) {
+export const generateMonthOptions = (month, year) => {
   const monthData = getLastYearInMonths(month, year)
   return monthData.map(
     m => <option key={m.value} value={ m.value }>{ m.name }</option>
