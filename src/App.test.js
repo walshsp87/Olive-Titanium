@@ -5,7 +5,7 @@ import App from './App'
 
 import { BrowserRouter, Switch } from 'react-router-dom'
 import { Grid } from 'react-bootstrap'
-import { Navigation } from './components/navigation'
+import { Navigation } from './components/navigation/Navigation'
 
 describe('<App />', () => {
   let mountedComponent
