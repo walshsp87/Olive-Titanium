@@ -4,6 +4,8 @@ import { Row, Col } from 'react-bootstrap'
 import { EditableTable } from '../editableTable/'
 import { PeriodSelector } from './PeriodSelector'
 
+import APICONST from '../../static/apiConst'
+
 export class TransactionsLayout extends React.Component {
   constructor(props) {
     super(props)
@@ -40,7 +42,7 @@ export class TransactionsLayout extends React.Component {
         key: 'catId',
         editable: true,
         inputType: 'select',
-        selectPath: 'categories' 
+        selectPath: APICONST.CATEGORIES 
       }
     ]
 
@@ -51,7 +53,7 @@ export class TransactionsLayout extends React.Component {
             filterName={ this.state.dateFilter }
             monthChange={ this.monthChange.bind(this) } />
           <EditableTable
-            apiPath={ 'transactions' }
+            apiPath={ APICONST.TRANSACTIONS }
             apiDateFilter={ this.state.dateFilter }
             columns={ columns }
           />

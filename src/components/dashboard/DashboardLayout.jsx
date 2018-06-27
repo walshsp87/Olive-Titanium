@@ -2,6 +2,7 @@ import React from 'react'
 import { Row } from 'react-bootstrap'
 
 import { GET } from '../../utilities/api'
+import APICONST from '../../static/apiConst'
 import { PrimaryRender } from './PrimaryRender'
 import { CategoryChartGroup } from './CategoryChartGroup'
 
@@ -44,8 +45,8 @@ export class DashboardLayout extends React.Component {
     const year = date.getFullYear()
 
     const props = [
-      'categories',
-      `transactions?date_like=${year}-${String(month).padStart(2, '0')}-??`,
+      APICONST.CATEGORIES,
+      `${APICONST.TRANSACTIONS}?date_like=${year}-${String(month).padStart(2, '0')}-??`,
     ]
     this.setState({
       loading: true
